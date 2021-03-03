@@ -24,6 +24,8 @@ class _ResultsState extends State<Results> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBarHLTB(
+        customColor: Colors.grey[900],
+        customElevation: 10.0,
         customTitle: Image.asset('assets/images/hltb_brand.png', 
           fit:BoxFit.contain, 
           height: 70,),

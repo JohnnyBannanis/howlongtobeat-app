@@ -1,9 +1,11 @@
 import "package:flutter/material.dart";
 
 class AppBarHLTB extends StatefulWidget implements PreferredSizeWidget{
-  AppBarHLTB({Key key, this.customTitle}) : super(key: key);
+  AppBarHLTB({Key key, this.customTitle, this.customColor, this.customElevation}) : super(key: key);
 
   final Widget customTitle;
+  final Color customColor;//grey[900]
+  final double customElevation;//10
   final Size preferredSize = Size.fromHeight(60);
 
   @override
@@ -17,8 +19,8 @@ class _AppBarHLTBState extends State<AppBarHLTB> {
       child: Hero(
         tag: AppBar,
         child: AppBar(
-          backgroundColor: Colors.grey[900],
-          elevation: 10,
+          backgroundColor: this.widget.customColor,
+          elevation: this.widget.customElevation,
           title: this.widget.customTitle,
           centerTitle: true,
           toolbarHeight: 60,

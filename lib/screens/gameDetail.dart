@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'dart:ui';
 import 'package:howlongtobeat_app/components/BigSummaryTime.dart';
 import 'package:howlongtobeat_app/components/GoToWebBtn.dart';
 import 'package:howlongtobeat_app/components/RatingBar.dart';
 import 'package:howlongtobeat_app/components/TextInfo.dart';
-import 'dart:ui';
 import 'package:howlongtobeat_app/models/GameInfo.dart';
 import 'package:howlongtobeat_app/models/SearchResult.dart';
 import 'package:howlongtobeat_app/services/GameInfoService.dart';
 import 'package:howlongtobeat_app/components/AppBar_hltb.dart';
+import "package:howlongtobeat_app/screens/fullGameImage.dart";
 
 
 class GameDetail extends StatefulWidget {
@@ -34,6 +35,8 @@ class _GameDetailState extends State<GameDetail> {
     return Scaffold(
       backgroundColor: Colors.grey[800],
       appBar: AppBarHLTB(
+        customColor: Colors.grey[900],
+        customElevation: 10.0,
         customTitle: Image.asset('assets/images/hltb_banner.png', 
           fit:BoxFit.contain, 
           height: 32.5),
@@ -58,7 +61,8 @@ class _GameDetailState extends State<GameDetail> {
 
         GestureDetector(
           onTap: (){
-            //print("image");
+            Navigator.push(context,
+              MaterialPageRoute(builder: (BuildContext context) => GameImage(data: item,)));
           },
           child: Container(
             padding: EdgeInsets.only(bottom:85),
