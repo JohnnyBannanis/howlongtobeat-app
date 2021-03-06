@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:ui';
 import 'package:howlongtobeat_app/components/BigSummaryTime.dart';
 import 'package:howlongtobeat_app/components/GoToWebBtn.dart';
+import 'package:howlongtobeat_app/components/ListInfo.dart';
 import 'package:howlongtobeat_app/components/RatingBar.dart';
 import 'package:howlongtobeat_app/components/TextInfo.dart';
 import 'package:howlongtobeat_app/models/GameInfo.dart';
@@ -129,7 +130,9 @@ class _GameDetailState extends State<GameDetail> {
                             TextInfo(
                               gameInfo: gameData,
                             ),
-
+                            ListInfo(
+                              gameInfo: gameData,
+                            ),
                             GoToWebBtn(
                               url: gameData.webLink,
                             )
