@@ -21,28 +21,30 @@ class _GameImageState extends State<GameImage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBarHLTB(
+        customColor: Colors.grey[900],
+        customElevation:0
+      ),
       backgroundColor: Colors.grey[900],
       body: Stack(
         children: [
           Container(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
-          
               child: InteractiveViewer(
-
                 child:Hero(
                   tag: item.gameId,
                   child: Image.network(item.imageUrl, fit: BoxFit.fitWidth,)
                 ),
               ),
           ),
-          SizedBox(
-            height: 60,
-            child: AppBarHLTB(
-              customElevation: 0,
-              customColor: Colors.transparent,
-            ),
-          ),
+          // SizedBox(
+          //   height: 60,
+          //   child: AppBarHLTB(
+          //     customElevation: 0,
+          //     customColor: Colors.transparent,
+          //   ),
+          // ),
         ],
       ),
     );
