@@ -124,21 +124,10 @@ class _GameDetailState extends State<GameDetail> {
                         var gameData = snapshot.data;
                         return Column(
                           children: [
-                            RatingBar(
-                              rating: gameData.rating,
-                            ),
-                            TextInfo(
-                              gameInfo: gameData,
-                            ),
-                            ListInfo(
-                              gameInfo: gameData,
-                            ),
-                            GoToWebBtn(
-                              url: gameData.webLink,
-                            )
-
-
-                            
+                            RatingBar( rating: gameData.rating),
+                            TextInfo( gameInfo: gameData),
+                            ListInfo( gameInfo: gameData),
+                            GoToWebBtn( url: gameData.webLink)
                           ],
                         );
                       } else if (snapshot.hasError) {

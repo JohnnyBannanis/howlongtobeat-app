@@ -6,7 +6,7 @@ class SearchService {
 
   //String apiHost = "http://192.168.1.90:5555";
   static Future<List<SearchResult>> fetch(String query) async {
-    final response = await http.get(Uri.encodeFull('http://192.168.1.90:5555/search/'+ query));
+    final response = await http.get(Uri.encodeFull('https://hltb-api.herokuapp.com/search/'+ query));
     var elem = jsonDecode(response.body);
     Iterable list = elem['HLTB'];
     List gamesFounded = list.map((item) => SearchResult.fromJson(item)).toList();
